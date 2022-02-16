@@ -5,5 +5,10 @@ const saveUser = () => {
     telefono: document.getElementById("phone").value,
     direccion: document.getElementById("address").value,
   };
-  localStorage.setItem("user", JSON.stringify(obj));
+  if(obj['nombre'].length == 0 || obj['apellido'].length == 0 || obj['telefono'].length == 0 || obj['direccion'].length == 0 ){
+    alert('Rellena todos los campos.');
+  } else {
+    localStorage.setItem("user", JSON.stringify(obj));
+  }
+  
 };
